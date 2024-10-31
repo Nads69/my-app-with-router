@@ -1,5 +1,12 @@
-import React from "react";
+import { useRouteLoaderData } from "react-router-dom";
 
 export default function Home() {
-  return <h1>Hello from Home</h1>;
+  const weather = useRouteLoaderData("app") as string;
+
+  return (
+    <>
+      <h1>Hello from Home</h1>
+      <p>Today is a {weather} day</p>
+    </>
+  );
 }
